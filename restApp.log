@@ -4,3 +4,41 @@
 2025-06-27T12:30:06.030+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-06-27T12:30:06.032+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-27T12:30:06.037+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-27T12:40:16.456+03:00  INFO 6604 --- [restApplication] [main] c.f.restApplication.RestApplication      : Starting RestApplication using Java 23.0.1 with PID 6604 (D:\study\javaStudy\projects_for_hub\javaProjects\JavaRestApp\restApplication\target\classes started by Rus_Cap in D:\study\javaStudy\projects_for_hub\javaProjects\JavaRestApp\restApplication)
+2025-06-27T12:40:16.460+03:00  INFO 6604 --- [restApplication] [main] c.f.restApplication.RestApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-06-27T12:40:17.536+03:00  INFO 6604 --- [restApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27T12:40:17.622+03:00  INFO 6604 --- [restApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interface.
+2025-06-27T12:40:18.251+03:00  INFO 6604 --- [restApplication] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-27T12:40:18.271+03:00  INFO 6604 --- [restApplication] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-27T12:40:18.272+03:00  INFO 6604 --- [restApplication] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-06-27T12:40:18.391+03:00  INFO 6604 --- [restApplication] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-27T12:40:18.392+03:00  INFO 6604 --- [restApplication] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1834 ms
+2025-06-27T12:40:18.692+03:00  INFO 6604 --- [restApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27T12:40:18.782+03:00  INFO 6604 --- [restApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-06-27T12:40:18.835+03:00  INFO 6604 --- [restApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-27T12:40:19.353+03:00  INFO 6604 --- [restApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27T12:40:19.397+03:00  INFO 6604 --- [restApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-27T12:40:19.665+03:00  INFO 6604 --- [restApplication] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@10bf1ec9
+2025-06-27T12:40:19.668+03:00  INFO 6604 --- [restApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-27T12:40:19.775+03:00  INFO 6604 --- [restApplication] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-27T12:40:21.116+03:00  INFO 6604 --- [restApplication] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27T12:40:21.177+03:00  INFO 6604 --- [restApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27T12:40:21.584+03:00  WARN 6604 --- [restApplication] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27T12:40:21.650+03:00  INFO 6604 --- [restApplication] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-27T12:40:22.038+03:00  INFO 6604 --- [restApplication] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-27T12:40:22.055+03:00  INFO 6604 --- [restApplication] [main] c.f.restApplication.RestApplication      : Started RestApplication in 6.301 seconds (process running for 6.888)
+2025-06-27T12:40:25.317+03:00  INFO 6604 --- [restApplication] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-27T12:40:25.317+03:00  INFO 6604 --- [restApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-27T12:40:25.319+03:00  INFO 6604 --- [restApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-27T12:55:08.478+03:00  INFO 6604 --- [restApplication] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27T12:55:08.484+03:00  INFO 6604 --- [restApplication] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-27T12:55:08.487+03:00  INFO 6604 --- [restApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27T12:55:08.490+03:00  INFO 6604 --- [restApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-27T12:55:08.495+03:00  INFO 6604 --- [restApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

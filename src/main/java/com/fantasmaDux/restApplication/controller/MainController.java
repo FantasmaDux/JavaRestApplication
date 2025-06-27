@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 public class MainController {
@@ -29,5 +31,20 @@ public class MainController {
             log.error("Failed to convert motorcycle to JSON", e);
         }
         motorcycleRepo.save(motorcycle);
+    }
+
+    @GetMapping("/api/all")
+    public String getAllMotorcycle() {
+        List<Motorcycle> motorcycles = motorcycleRepo.findAll();
+        try {
+            return objectMapper.writeValueAsString(motorcycles);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @GetMapping("/api")
+    public Motorcycle getMotorcycle(@RequestParam long id) {
+        return motorcycleRepo.findById(id).orElseThrow();
     }
 }
