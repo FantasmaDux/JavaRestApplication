@@ -1,9 +1,23 @@
 package com.fantasmaDux.restApplication.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "motorcycle")
 public class Motorcycle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private String brand;
+
+    @Column(nullable = false, unique = true)
     private String model;
+
+    @Column(nullable = false)
     private int year;
+
     public Motorcycle(String brand, String model, int year) {
         this.brand = brand;
         this.model = model;
@@ -35,6 +49,16 @@ public class Motorcycle {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Motorcycle{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                '}';
     }
 }
 

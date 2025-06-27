@@ -1,0 +1,6 @@
+2025-06-27T12:29:33.679+03:00  INFO 15288 --- [restApplication] [http-nio-8080-exec-3] c.f.r.controller.MainController          : New row in table Motorcycle: {"brand":"Honda","model":"CBR600RR","year":2015}
+2025-06-27T12:30:06.020+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27T12:30:06.027+03:00  INFO 15288 --- [restApplication] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-27T12:30:06.030+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27T12:30:06.032+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-27T12:30:06.037+03:00  INFO 15288 --- [restApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
