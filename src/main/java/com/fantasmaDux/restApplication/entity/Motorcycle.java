@@ -51,6 +51,10 @@ public class Motorcycle {
         this.year = year;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Motorcycle{" +

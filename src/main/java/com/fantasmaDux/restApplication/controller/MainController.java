@@ -13,6 +13,7 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/api")
 public class MainController {
 
     private static final Logger log = LoggerFactory.getLogger(MainController.class);
@@ -22,18 +23,18 @@ public class MainController {
     @Autowired
     private MotorcycleRepo motorcycleRepo;
 
-    @PostMapping("/api/add")
+    @PostMapping("/add")
     public void addMotorcycle(@RequestBody Motorcycle motorcycle) {
         try {
             String json = objectMapper.writeValueAsString(motorcycle);
             log.info("New row in table Motorcycle: {}", json);
         } catch (JsonProcessingException e) {
-            log.error("Failed to convert motorcycle to JSON", e);
+            log.error("Failed to convert motorcycle to JSON");
         }
         motorcycleRepo.save(motorcycle);
     }
 
-    @GetMapping("/api/all")
+    @GetMapping("/all")
     public String getAllMotorcycle() {
         List<Motorcycle> motorcycles = motorcycleRepo.findAll();
         try {
@@ -43,8 +44,33 @@ public class MainController {
         }
     }
 
-    @GetMapping("/api")
+    @GetMapping("")
     public Motorcycle getMotorcycle(@RequestParam long id) {
         return motorcycleRepo.findById(id).orElseThrow();
+    }
+
+    @DeleteMapping("")
+    public void deleteMotorcycle(@RequestParam long id) {
+        if (motorcycleRepo.existsById(id)) {
+            motorcycleRepo.deleteById(id);
+            log.info("row with id {} in table was deleted", id);
+        } else {
+            log.warn("Attempted to delete non-existing motorcycle with ID {}", id);
+        }
+    }
+
+    @PutMapping("")
+    public String changeMotorcycle(@RequestBody Motorcycle motorcycle) {
+        if (!motorcycleRepo.existsById(motorcycle.getId())) {
+            log.error("No such object (row)");
+            return "error";
+        }
+        try {
+            String json = objectMapper.writeValueAsString(motorcycle);
+            log.info("New row info for table Motorcycle: {}", json);
+        } catch (JsonProcessingException e) {
+            log.error("Failed to convert motorcycle to JSON");
+        }
+        return motorcycleRepo.save(motorcycle).toString();
     }
 }
