@@ -1,9 +1,13 @@
 package com.fantasmaDux.restApplication.controller;
 
+import com.fantasmaDux.restApplication.dto.MotorcycleDTO;
 import com.fantasmaDux.restApplication.entity.Motorcycle;
+import com.fantasmaDux.restApplication.mapper.MotorcycleMapper;
 import com.fantasmaDux.restApplication.repository.MotorcycleRepo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@Tag(name="Motorcycle_Methods")
 @RestController
 @RequestMapping("/api")
 public class MainController {
@@ -23,8 +27,16 @@ public class MainController {
     @Autowired
     private MotorcycleRepo motorcycleRepo;
 
+    @Operation(
+            summary = "Put new motorcycle in data base", // краткое описание метода
+            description = "Get DTO of motorcycle and with mapper recreate it " +
+                    "to entity. Then save in db."
+
+    )
     @PostMapping("/add")
-    public void addMotorcycle(@RequestBody Motorcycle motorcycle) {
+    public void addMotorcycle(@RequestBody MotorcycleDTO motorcycleDTO) {
+        Motorcycle motorcycle = MotorcycleMapper.toEntity(motorcycleDTO);
+
         try {
             String json = objectMapper.writeValueAsString(motorcycle);
             log.info("New row in table Motorcycle: {}", json);
