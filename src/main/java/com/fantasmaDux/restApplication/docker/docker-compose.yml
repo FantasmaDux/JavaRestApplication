@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  app:
+    image: 'sha256:594960d960c5759e1b1829aef8557d84c67cee20e61a4b353673a6bb62a65d9f'
+    container_name: app
+    expose:
+      - '8080'
+    ports:
+      - '8080:8080'
+#    environment:
+    depends_on:
+      - app-db
+
+  app-db:
+    image: 'postgres'
+    container_name: app-db
+    expose:
+      - '5432'
+    environment:
+      POSTGRES_DB: motorcycleDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 267115
