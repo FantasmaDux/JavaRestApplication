@@ -2,7 +2,9 @@ version: '3.1'
 
 services:
   app:
-    image: 'sha256:594960d960c5759e1b1829aef8557d84c67cee20e61a4b353673a6bb62a65d9f'
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: app
     expose:
       - '8080'
