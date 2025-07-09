@@ -15,7 +15,7 @@ public class Motorcycle {
     @Column(nullable = false, unique = true)
     private String model;
 
-    @Column(nullable = false)
+    @Column(name = "`year`")
     private int year;
 
     public Motorcycle(String brand, String model, int year) {
@@ -53,6 +53,10 @@ public class Motorcycle {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

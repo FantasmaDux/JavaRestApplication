@@ -34,16 +34,19 @@ public class MainController {
 
     )
     @PostMapping("/add")
-    public void addMotorcycle(@RequestBody MotorcycleDTO motorcycleDTO) {
+    public Motorcycle addMotorcycle(@RequestBody MotorcycleDTO motorcycleDTO) {
         Motorcycle motorcycle = MotorcycleMapper.toEntity(motorcycleDTO);
 
-        try {
-            String json = objectMapper.writeValueAsString(motorcycle);
-            log.info("New row in table Motorcycle: {}", json);
-        } catch (JsonProcessingException e) {
-            log.error("Failed to convert motorcycle to JSON");
-        }
-        motorcycleRepo.save(motorcycle);
+        return motorcycleRepo.save(motorcycle);
+//        Motorcycle motorcycle = MotorcycleMapper.toEntity(motorcycleDTO);
+//
+//        try {
+//            String json = objectMapper.writeValueAsString(motorcycle);
+//            log.info("New row in table Motorcycle: {}", json);
+//        } catch (JsonProcessingException e) {
+//            log.error("Failed to convert motorcycle to JSON");
+//        }
+//        motorcycleRepo.save(motorcycle);
     }
 
     @GetMapping("/all")
